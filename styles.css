@@ -1,0 +1,71 @@
+html{
+    height: 100%;
+}
+body{
+    background-image: linear-gradient(rgb(255, 255, 255),rgb(255, 107, 107));
+}
+.text{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.container{
+    width: 600px;
+    height: 400px;
+    display: grid;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 1%;
+}
+
+.center{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    right: 100px;
+    font-size: 1.5rem;
+    height: 2.5rem;
+    max-height: 100%;
+    max-width: 100%;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    outline: none;
+    box-shadow: 0 0.2rem 3px rgb(121,121,121,0.50);
+    cursor: pointer;
+    white-space: normal;
+}
+button:hover{
+    filter:brightness(130%);
+}
+button:active{
+    transform: translate(0,0.1rem);
+    box-shadow: 0 0.2rem 3px rgb(121,121,121,0.50);
+}
+
+.center-buttons{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 1vh;
+    width: 100%;
+}
+
+.colorChange{
+    border-color: transparent;
+    border: none;
+    padding: 0;
+    width: 10px;
+    height: 10px;
+}
