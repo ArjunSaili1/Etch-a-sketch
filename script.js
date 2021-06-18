@@ -3,16 +3,19 @@ const center = document.querySelector('.center');
 const sizeButton = document.getElementById('sizeButton');
 const eraserButton = document.getElementById('eraserButton');
 const penButton = document.getElementById('penButton');
+const randomColorButton = document.getElementById('RandomColor');
+const colorChoose = document.getElementById('chooseColor');
 let clickCount = 0;
-sizeButton.addEventListener('click', e => {getSize()});
-clearButton.addEventListener('click', e=>{clearCanvas()})
-eraserButton.addEventListener('click', e=>{erase()})
-penButton.addEventListener('click', e => {color()});
+randomColorButton.addEventListener('click', () => {color(true)})
+sizeButton.addEventListener('click', () => {getSize()});
+clearButton.addEventListener('click', () =>{clearCanvas()})
+eraserButton.addEventListener('click', () =>{erase()})
+penButton.addEventListener('click', () => {color()});
 generateGrid(16);
 
 function clearCanvas(){
     for(let i=0; i<container.children.length; i++){
-        if (container.children[i].style.backgroundColor == 'black'){
+        if (container.children[i].style.backgroundColor){
             container.children[i].style.backgroundColor = '';
         }
     }
@@ -59,10 +62,20 @@ function erase(){
     }
 }
 
-function color(){
+
+function color(randomColor=false){
+    eraserButton.style.borderColor = null;
+    eraserButton.style.borderStyle = null;
+    eraserButton.style.borderWidth = null;
     for(let i=0; i < container.children.length; i++){
         container.children[i].addEventListener('mouseover', e => {
-            container.children[i].style.backgroundColor = 'black';
+            if (randomColor){
+                randomColorGen = '#' + Math.floor(Math.random()*16777215).toString(16);
+                container.children[i].style.backgroundColor = randomColorGen;
+            }
+            else{
+                container.children[i].style.backgroundColor = 'black';
+            }
         });
     }
 }
